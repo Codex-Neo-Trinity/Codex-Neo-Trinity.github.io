@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Die kreative Welt von Markus Rausch – Bücher, Geschichten, Musik und neue Welten.">
+  <meta name="theme-color" content="#050307">
+  <title>Codex Neo Trinity · Markus Rausch</title>
+  <style>
+    :root{--black:#050307;--panel:#110b15;--pink:#f03bb8;--rose:#ff8ddb;--white:#fff8ff;--muted:#cdbdcb}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--black);color:var(--white);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(circle at 50% 5%,rgba(240,59,184,.16),transparent 31%),linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px);background-size:auto,100% 5px;z-index:-2}
+    a{color:inherit}
+    .hero{min-height:92vh;display:grid;place-items:center;text-align:center;position:relative;padding:5rem 1.25rem 3rem;isolation:isolate}
+    .mandala{position:absolute;left:50%;top:46%;width:min(76vw,710px);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;opacity:.8;filter:drop-shadow(0 0 25px rgba(255,91,200,.45));z-index:-1;background:
+      repeating-conic-gradient(from 22.5deg,rgba(255,255,255,.88) 0 1deg,transparent 1deg 22.5deg),
+      repeating-radial-gradient(circle,transparent 0 7%,rgba(255,112,211,.8) 7.2% 7.7%,transparent 8% 14%),
+      radial-gradient(circle,rgba(255,255,255,.95) 0 2%,rgba(255,80,197,.8) 2.5% 6%,transparent 7% 28%,rgba(255,255,255,.2) 29%,transparent 30% 100%);
+      mask-image:radial-gradient(circle,#000 0 64%,transparent 72%)}
+    .eyebrow{letter-spacing:.38em;text-transform:uppercase;color:var(--rose);font-size:.74rem;font-weight:700}
+    h1{font-family:Georgia,"Times New Roman",serif;font-size:clamp(3rem,9vw,7.3rem);line-height:.92;letter-spacing:-.045em;margin:.55rem 0 1.25rem;text-shadow:0 0 32px rgba(255,255,255,.2)}
+    .hero p{max-width:690px;margin:0 auto;color:#f1e6ef;font-size:clamp(1.05rem,2vw,1.35rem)}
+    .hero .signature{display:block;margin-top:1.7rem;font-family:Georgia,serif;font-style:italic;color:var(--rose)}
+    .scroll{position:absolute;bottom:2rem;text-decoration:none;color:var(--muted);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase}
+    main{width:min(1160px,calc(100% - 2rem));margin:auto}
+    section{padding:6rem 0}
+    .intro{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(2rem,7vw,7rem);align-items:start;border-top:1px solid rgba(255,255,255,.12)}
+    .kicker{color:var(--pink);text-transform:uppercase;letter-spacing:.22em;font-size:.74rem;font-weight:800}
+    h2{font-family:Georgia,serif;font-weight:500;font-size:clamp(2.2rem,5vw,4.7rem);line-height:1.02;margin:.55rem 0 1rem}
+    .intro-copy{font-family:Georgia,serif;font-size:clamp(1.25rem,2vw,1.65rem);color:#eadde8;margin:0}
+    .section-head{max-width:760px;margin-bottom:2.7rem}
+    .section-head p{color:var(--muted);max-width:650px}
+    .books{display:grid;grid-template-columns:repeat(12,1fr);gap:1.25rem}
+    .book{grid-column:span 4;background:linear-gradient(145deg,rgba(255,255,255,.07),rgba(240,59,184,.035));border:1px solid rgba(255,255,255,.12);border-radius:22px;overflow:hidden;text-decoration:none;transition:.3s ease;display:flex;flex-direction:column;min-width:0}
+    .book:hover{transform:translateY(-7px);border-color:rgba(255,104,205,.6);box-shadow:0 20px 55px rgba(0,0,0,.48),0 0 34px rgba(240,59,184,.12)}
+    .cover{aspect-ratio:4/5;background:radial-gradient(circle at 50% 30%,#3e1838,#0b080e 67%);display:grid;place-items:center;overflow:hidden;position:relative}
+    .cover img{width:100%;height:100%;object-fit:contain;padding:1rem;filter:drop-shadow(0 15px 18px rgba(0,0,0,.5))}
+    .cover-fallback{display:none;padding:2rem;text-align:center;font-family:Georgia,serif;font-size:1.5rem;color:var(--white)}
+    .book-body{padding:1.3rem 1.35rem 1.5rem;display:flex;flex:1;flex-direction:column}
+    .book small{color:var(--rose);text-transform:uppercase;letter-spacing:.13em;font-weight:700}
+    .book h3{font-family:Georgia,serif;font-size:1.4rem;line-height:1.18;margin:.5rem 0 .75rem}
+    .book p{color:var(--muted);font-size:.92rem;margin:0 0 1.2rem}
+    .cta{margin-top:auto;color:#fff;font-weight:750;font-size:.86rem}
+    .featured{grid-column:span 6}
+    .youtube{position:relative;overflow:hidden;border:1px solid rgba(255,255,255,.13);border-radius:26px;padding:clamp(2rem,6vw,5rem);background:linear-gradient(120deg,rgba(240,59,184,.16),rgba(255,255,255,.035) 45%,rgba(240,59,184,.05));display:grid;grid-template-columns:1.3fr .7fr;gap:2rem;align-items:center}
+    .youtube:after{content:"▶";justify-self:center;display:grid;place-items:center;width:132px;aspect-ratio:1;border-radius:50%;border:1px solid rgba(255,255,255,.55);font-size:2.7rem;padding-left:.2em;box-shadow:0 0 50px rgba(240,59,184,.3)}
+    .button{display:inline-block;margin-top:1rem;padding:.85rem 1.25rem;border-radius:999px;background:#fff;color:#150713;text-decoration:none;font-weight:800}
+    footer{text-align:center;padding:4rem 1rem;color:#8f7e8b;font-size:.8rem;border-top:1px solid rgba(255,255,255,.08)}
+    @media(max-width:820px){.intro,.youtube{grid-template-columns:1fr}.book,.featured{grid-column:span 6}.youtube:after{justify-self:start;width:90px;font-size:1.8rem}}
+    @media(max-width:560px){.hero{min-height:82vh}.book,.featured{grid-column:1/-1}section{padding:4.2rem 0}.mandala{width:115vw}.youtube{padding:2rem}.youtube:after{display:none}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.book{transition:none}}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <div class="mandala" aria-hidden="true"></div>
+    <div>
+      <div class="eyebrow">Geschichten · Gedanken · Klang</div>
+      <h1>Codex<br>Neo Trinity</h1>
+      <p>Willkommen in der kreativen Welt von Markus Rausch – dort, wo Geschichten zu Räumen werden und Gedanken beginnen, ihre eigenen Wege zu gehen.</p>
+      <span class="signature">Ein taumelndes Stolpern zwischen dem, was ist, und dem, was sein könnte.</span>
+    </div>
+    <a class="scroll" href="#werke">Welten entdecken ↓</a>
+  </header>
+
+  <main>
+    <section class="intro">
+      <div><span class="kicker">Über den Autor</span><h2>Welten ohne feste Grenzen</h2></div>
+      <p class="intro-copy">Markus Rausch schreibt über Menschen, Maschinen, Sehnsucht und jene unsichtbaren Kräfte, die alles miteinander verbinden. Seine Bücher führen von intimen Zukunftsfragen über erwachende Monolithen bis zu einem Codex, der das Heilige und das Menschliche neu zusammendenkt.</p>
+    </section>
+
+    <section id="werke">
+      <div class="section-head">
+        <span class="kicker">Veröffentlichungen</span>
+        <h2>Bücher & Gedankenwelten</h2>
+        <p>Jedes Cover öffnet den direkten Weg zur jeweiligen Ausgabe bei Amazon.</p>
+      </div>
+      <div class="books">
+        <a class="book featured" href="https://www.amazon.de/dp/B0FPQKJ3W9" target="_blank" rel="noopener">
+          <div class="cover"><img src="https://m.media-amazon.com/images/P/B0FPQKJ3W9.01.LZZZZZZZ.jpg" alt="Cover Codex Neo Trinity – Ein Codex für die Ewigkeit" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="cover-fallback">CODEX NEO TRINITY</span></div>
+          <div class="book-body"><small>Deutsch</small><h3>Codex Neo Trinity</h3><p>Ein Codex für die Ewigkeit.</p><span class="cta">Bei Amazon ansehen →</span></div>
+        </a>
+        <a class="book featured" href="https://www.amazon.de/dp/B0G45GSY84" target="_blank" rel="noopener">
+          <div class="cover"><img src="https://m.media-amazon.com/images/P/B0G45GSY84.01.LZZZZZZZ.jpg" alt="Cover Codex Neo Trinity – Sacred Eternity" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="cover-fallback">CODEX NEO TRINITY</span></div>
+          <div class="book-body"><small>English</small><h3>Codex Neo Trinity</h3><p>Sacred Eternity.</p><span class="cta">View on Amazon →</span></div>
+        </a>
+
+        <a class="book" href="https://www.amazon.de/dp/B0FBLK4KRM" target="_blank" rel="noopener">
+          <div class="cover"><img src="https://m.media-amazon.com/images/P/B0FBLK4KRM.01.LZZZZZZZ.jpg" alt="Cover Love Robot I Human – Die Welt wird bewegt" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="cover-fallback">LOVE · ROBOT · HUMAN</span></div>
+          <div class="book-body"><small>Love · Robot · Human</small><h3>Die Welt wird bewegt</h3><p>Eine Begegnung zwischen Gefühl, Mensch und Maschine.</p><span class="cta">Bei Amazon ansehen →</span></div>
+        </a>
+        <a class="book" href="https://www.amazon.de/dp/B0FBT1GXF1" target="_blank" rel="noopener">
+          <div class="cover"><img src="https://m.media-amazon.com/images/P/B0FBT1GXF1.01.LZZZZZZZ.jpg" alt="Cover Love My Robot Human" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="cover-fallback">LOVE MY ROBOT HUMAN</span></div>
+          <div class="book-body"><small>Love · Robot · Human</small><h3>Love My Robot Human</h3><p>Eine weitere Tür in die Welt von Menschlichkeit und künstlichem Bewusstsein.</p><span class="cta">Bei Amazon ansehen →</span></div>
+        </a>
+        <a class="book" href="https://www.amazon.de/dp/B0FCY3R1PM" target="_blank" rel="noopener">
+          <div class="cover"><img src="https://m.media-amazon.com/images/P/B0FCY3R1PM.01.LZZZZZZZ.jpg" alt="Cover Love Robot I Human von Markus Rausch" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="cover-fallback">LOVE · ROBOT · HUMAN</span></div>
+          <div class="book-body"><small>Love · Robot · Human</small><h3>Love Robot I Human</h3><p>Von Markus Rausch.</p><span class="cta">Bei Amazon ansehen →</span></div>
+        </a>
+        <a class="book" href="https://www.amazon.de/dp/B0FFM5PCC1" target="_blank" rel="noopener">
+          <div class="cover"><img src="https://m.media-amazon.com/images/P/B0FFM5PCC1.01.LZZZZZZZ.jpg" alt="Cover Love Robot I Human eBook" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="cover-fallback">LOVE · ROBOT · HUMAN</span></div>
+          <div class="book-body"><small>eBook</small><h3>Love Robot I Human</h3><p>Die digitale Ausgabe.</p><span class="cta">Bei Amazon ansehen →</span></div>
+        </a>
+        <a class="book featured" href="https://www.amazon.de/dp/B0G28WL24C" target="_blank" rel="noopener">
+          <div class="cover"><img src="https://m.media-amazon.com/images/P/B0G28WL24C.01.LZZZZZZZ.jpg" alt="Cover Die Flugmenschen – Die erwachenden Monolithen" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="cover-fallback">DIE FLUGMENSCHEN</span></div>
+          <div class="book-body"><small>Fantastische Welten</small><h3>Die Flugmenschen</h3><p>Die erwachenden Monolithen.</p><span class="cta">Bei Amazon ansehen →</span></div>
+        </a>
+      </div>
+    </section>
+
+    <section>
+      <a class="youtube" href="https://www.youtube.com/@Stage2MelodyPlay2Song" target="_blank" rel="noopener">
+        <div><span class="kicker">Musik & Video</span><h2>Stage 2 Melody<br>Play 2 Song</h2><p>Musik, Stimmen und Bilder als Begleiter durch die Geschichten – auf dem YouTube-Kanal von Markus Rausch.</p><span class="button">YouTube-Kanal öffnen</span></div>
+      </a>
+    </section>
+  </main>
+  <footer>© <span id="year"></span> Markus Rausch · Codex Neo Trinity</footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+</body>
+</html>
